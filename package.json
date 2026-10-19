@@ -1,0 +1,32 @@
+{
+  "name": "gsms",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Grocery Shop Management System (GSMS)",
+  "workspaces": [
+    "backend",
+    "frontend"
+  ],
+  "scripts": {
+    "dev:backend": "yarn workspace gsms-backend dev",
+    "dev:frontend": "yarn workspace gsms-frontend dev",
+    "dev": "concurrently \"yarn dev:backend\" \"yarn dev:frontend\"",
+    "build:backend": "yarn workspace gsms-backend build",
+    "build:frontend": "yarn workspace gsms-frontend build",
+    "build": "yarn build:backend && yarn build:frontend",
+    "lint:backend": "yarn workspace gsms-backend lint",
+    "lint:frontend": "yarn workspace gsms-frontend lint",
+    "lint": "yarn lint:backend && yarn lint:frontend",
+    "type-check:backend": "yarn workspace gsms-backend type-check",
+    "type-check:frontend": "yarn workspace gsms-frontend type-check",
+    "type-check": "yarn type-check:backend && yarn type-check:frontend",
+    "test:backend": "yarn workspace gsms-backend test",
+    "test": "yarn test:backend",
+    "format:check": "prettier --check \"**/*.{ts,tsx,js,jsx,json,md}\"",
+    "format": "prettier --write \"**/*.{ts,tsx,js,jsx,json,md}\""
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2",
+    "prettier": "^3.2.5"
+  }
+}
